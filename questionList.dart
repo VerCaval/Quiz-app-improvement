@@ -32,5 +32,10 @@ class QuizBrain{
   bool get questionAnswers {
     return _questionList[_questionIndex].questionAnswer;
   }
+  void nextQuestion (){
+    if (_questionIndex < _questionList.length);
+    _questionIndex += 1;
+    return nextQuestion();
+  }
 }
 
