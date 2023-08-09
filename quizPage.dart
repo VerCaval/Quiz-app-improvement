@@ -17,7 +17,6 @@ class _QuizPageState extends State<QuizPage> {
   late int questionIndexCurrent = quizBrain.questionIndex;
   late int questionBankLength = quizBrain.questionBank;
   late bool questionTruth = quizBrain.questionAnswers;
-  late void nextQuestions = quizBrain.nextQuestion();
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +58,7 @@ class _QuizPageState extends State<QuizPage> {
                     }
                   }
                   setState(() {
-                    nextQuestions();
+                    quizBrain.nextQuestion();
                   });
                 },
                 child: const Text('True'),
@@ -87,7 +86,7 @@ class _QuizPageState extends State<QuizPage> {
                     }
                   }
                   setState(() {
-                    nextQuestions();
+                    quizBrain.nextQuestion();
                   });
                 },
                 child: const Text('False'),
