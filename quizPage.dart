@@ -97,6 +97,3 @@ class _QuizPageState extends State<QuizPage> {
         ]);
   }
 }
-get scoreKeeper
-int boolToInt(bool a) => a ? 1 : 0;
-int correctAnswerCount = boolToInt(scoreKeeper);

@@ -1,5 +1,4 @@
 import 'question.dart';
-import 'quizPage.dart';
 
 class QuizBrain{
   int _questionIndex = 0;
@@ -21,7 +20,7 @@ class QuizBrain{
     if (_questionIndex < _questionList.length){
       return _questionList[_questionIndex].questionText;
     } else {
-      return 'End \n you have gotten $correctAnswerCount out of $_questionIndex';
+      return 'End';
     }
   }
   int get questionIndex {
