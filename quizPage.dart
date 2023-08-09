@@ -13,11 +13,7 @@ class _QuizPageState extends State<QuizPage> {
   List<bool> scoreKeeper = [];
 
   QuizBrain quizBrain = QuizBrain();
-  late String centerTextDisplay = quizBrain.centerText;
-  late int questionIndexCurrent = quizBrain.questionIndex;
-  late int questionBankLength = quizBrain.questionBank;
-  late bool questionTruth = quizBrain.questionAnswers;
-
+  
   @override
   Widget build(BuildContext context) {
     return  Column(
@@ -30,7 +26,7 @@ class _QuizPageState extends State<QuizPage> {
                 padding: const EdgeInsets.all(10),
                 child: Center(
                   child: Text(
-                    centerTextDisplay,
+                    quizBrain.centerText,
                     textAlign: TextAlign.center,
                     style:
                       const TextStyle(fontSize: 25, color: Colors.white)),
@@ -49,8 +45,8 @@ class _QuizPageState extends State<QuizPage> {
                   )
                 ),
                 onPressed: (){
-                  if (questionIndexCurrent < questionBankLength) {
-                    bool correctAnswer = questionTruth;
+                  if (quizBrain.questionIndex < quizBrain.questionBank) {
+                    bool correctAnswer = quizBrain.questionAnswers;
                     if (correctAnswer == true) {
                       scoreKeeper.add(true);
                     } else {
@@ -77,8 +73,8 @@ class _QuizPageState extends State<QuizPage> {
                   )
                 ),
                 onPressed: (){
-                  if (questionIndexCurrent < questionBankLength) {
-                    bool correctAnswer = questionTruth;
+                  if (quizBrain.questionIndex < quizBrain.questionBank) {
+                    bool correctAnswer = quizBrain.questionAnswers;
                     if (correctAnswer == false) {
                       scoreKeeper.add(true);
                     } else {
@@ -101,3 +97,5 @@ class _QuizPageState extends State<QuizPage> {
         ]);
   }
 }
+
+get scoreKeeper{}

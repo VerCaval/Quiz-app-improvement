@@ -20,7 +20,7 @@ class QuizBrain{
     if (_questionIndex < _questionList.length){
       return _questionList[_questionIndex].questionText;
     } else {
-      return 'End';
+      return 'End \n you have gotten';
     }
   }
   int get questionIndex {
@@ -32,10 +32,9 @@ class QuizBrain{
   bool get questionAnswers {
     return _questionList[_questionIndex].questionAnswer;
   }
-  void nextQuestion (){
+  void nextQuestion (){ 
     if (_questionIndex < _questionList.length);
     _questionIndex += 1;
-    return nextQuestion();
   }
 }
 
